@@ -1,0 +1,53 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 1, 2015, 2:04:49 PM
+    Author     : fijas
+*/
+div.fmselect{
+	width: 100%;
+}
+a.fmselect-all, a.fmselect-clear,div.fmselect-head-text{
+	display: inline-block;
+}
+a.fmselect-all, a.fmselect-clear{
+	width: 25%;
+}
+div.fmselect-head-text{
+	width: 50%;
+	text-align: center
+}
+a.fmselect-clear{
+	text-align: right;
+}
+.fmselect-search-container{
+	width: 100%;
+	text-align:center;
+	padding: 5px;
+}
+input.fmselect-search{
+	width: 80%;
+}
+div.fmselect-list{
+	border: 1px solid #efefef;
+	height: 130px;
+	overflow-y: scroll;
+}
+div.fmselect-list ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+div.fmselect-list ul li.selected{
+	background-color: #eee;
+}
+div.fmselect-list ul li{
+	padding: 5px 10px;
+	border-bottom: 1px solid #efefef;
+}
+div.fmselect-list ul li:last-child{
+	border-bottom: 0px;
+}

@@ -3,18 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+/* 
+    Created on : May 1, 2015, 2:04:49 PM
+    Author     : fijas
+*/
 (function ($) {
 	$.fn.fmSelect = function (options) {
 		var widgetCount = 1;
 		var settings = $.extend({
 			// Default Values
-			title: "Select Values"
+			title: "Select Values",
+			width: "100%"
 		}, options);
 		return this.each(function () {
 			var count = 0;
 			var widgetId = "";
-			if ($(this).prop("id") != "") {
+			if ($(this).prop("id") !== "") {
 				widgetId = $(this).prop("id");
 			} else {
 				widgetId = "fmselect-" + widgetCount;
@@ -23,10 +27,10 @@
 			if ($(this).data("title") !== undefined) {
 				settings.title = $(this).data("title");
 			}
-			var html = '<div class="fmselect" id="' + widgetId + '"><div class="fmselect-head"><a href="#" class="fmselect-all">All</a><div class="fmselect-head-text">' + settings.title + '</div><a href="#" class="fmselect-clear">Clear</a></div><div class="fmselect-search-container"><input type="text" class="fmselect-search" autocomplete="off" /></div><div class="fmselect-list"><ul>';
+			var html = '<div class="fmselect" id="' + widgetId + ' style="'+settings.width+'"><div class="fmselect-head"><div class="fmselect-all-container"><a href="#" class="fmselect-all">All</a></div><div class="fmselect-head-text">' + settings.title + '</div><div class="fmselect-clear-container"><a href="#" class="fmselect-clear">Clear</a></div></div><div class="fmselect-search-container"><input type="text" class="fmselect-search" autocomplete="off" /></div><div class="fmselect-list"><ul>';
 			$(this).children("option").each(function () {
 				++count;
-				html += "<li><input type='checkbox' name='" + widgetName + "' id='fmselect-val-" + widgetId + "-" + count + "' value='" + $(this).val() + "' data-text='" + $(this).text() + "'/> <label for='fmselect-val-" + widgetId + "-" + count + "'>" + $(this).text() + "</label></li>";
+				html += "<li><input type='checkbox' name='" +  widgetName + "' id='fmselect-val-" + widgetId + "-" + count + "' value='" + $(this).val() + "' data-text='" + $(this).text() + "'/> <label for='fmselect-val-" + widgetId + "-" + count + "'>" + $(this).text() + "</label></li>";
 
 			});
 			html += '</ul></div><div class="fmselect-selected">Selected (<span class="fmselect-count">0</span>): <span class="fmselect-selected-text"></span></div>';
@@ -38,7 +42,7 @@
 
 	function attachEvents(ID) {
 		$("#" + ID).on("change", ".fmselect-list ul li input", function () {
-			updateSelected(ID)
+			updateSelected(ID);
 		});
 		$("#" + ID).on("click", ".fmselect-all", function (e) {
 			e.preventDefault();

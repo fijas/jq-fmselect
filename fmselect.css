@@ -7,20 +7,18 @@ and open the template in the editor.
     Created on : May 1, 2015, 2:04:49 PM
     Author     : fijas
 */
-div.fmselect{
-	width: 100%;
-}
 a.fmselect-all, a.fmselect-clear,div.fmselect-head-text{
 	display: inline-block;
 }
-a.fmselect-all, a.fmselect-clear{
+div.fmselect-all-container, div.fmselect-clear-container{
 	width: 25%;
+	display: inline-block;
 }
 div.fmselect-head-text{
 	width: 50%;
 	text-align: center
 }
-a.fmselect-clear{
+div.fmselect-clear-container{
 	text-align: right;
 }
 .fmselect-search-container{
@@ -32,9 +30,15 @@ input.fmselect-search{
 	width: 80%;
 }
 div.fmselect-list{
-	border: 1px solid #efefef;
+	border: 1px solid #ddd;
 	height: 130px;
 	overflow-y: scroll;
+}
+div.fmselect-list ul li input{
+	margin: 0;
+}
+div.fmselect-list ul li label{
+	display: inline;
 }
 div.fmselect-list ul{
 	list-style-type: none;

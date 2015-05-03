@@ -31,7 +31,6 @@ input.fmselect-search{
 }
 div.fmselect-list{
 	border: 1px solid #ddd;
-	height: 130px;
 	overflow-y: scroll;
 }
 div.fmselect-list ul li input{
@@ -45,8 +44,8 @@ div.fmselect-list ul{
 	padding: 0;
 	margin: 0;
 }
-div.fmselect-list ul li.selected{
-	background-color: #eee;
+div.fmselect-list ul li.checked{
+	background-color: #ddd;
 }
 div.fmselect-list ul li{
 	padding: 5px 10px;
@@ -54,4 +53,7 @@ div.fmselect-list ul li{
 }
 div.fmselect-list ul li:last-child{
 	border-bottom: 0px;
+}
+div.fmselect-head, div.fmselect-selected{
+	padding: 2px 4px;
 }
